@@ -9,4 +9,4 @@ function sortArrayByString(arr, str) {
 // Example usage:
 const arr = [5, 2, 9, 1, 5, 6];
 console.log(sortArrayByString(arr, "Tang"));
-console.log(sortArrayByString(arr, "Giam"));
+console.log(sortArrayByString(arr, "Giam"));s

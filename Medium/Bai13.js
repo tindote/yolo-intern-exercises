@@ -1,3 +1,4 @@
+
 function calculateTax(incomes) {
     var totalTax = 0;
     for (var i = 0; i < incomes.length; i++) {

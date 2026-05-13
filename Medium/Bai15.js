@@ -5,5 +5,5 @@ function sumDigits(n) {
         n = Math.floor(n / 10);
     }
     return sum;
-}   
+}
 console.log(sumDigits(123));

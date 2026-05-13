@@ -1,16 +1,15 @@
-function calculateTax(incomes) {
-    var totalTax = 0;
-    for (var i = 0; i < incomes.length; i++) {
-        var income = incomes[i];
-        if (income <= 20) {
-            totalTax += income * 0.05;
-        } else if (income <= 50) {
-            totalTax += income * 0.1;
-        } else {
-            totalTax += income * 0.2;
+function countElements(arrA, arrB) {
+    let count = 0;
+    for (let i = 0; i < arrA.length; i++) {
+        for (let j = 0; j < arrB.length; j++) {
+            if (arrA[i] === arrB[j]) {
+                count++;
+            }
         }
     }
-    return totalTax;
+    return arrA.length-count;
 }
-var incomes = [10, 30, 60];
-console.log(calculateTax(incomes));
+const arrA = [1, 2, 3, 4];
+const arrB = [3, 4, 5, 6];
+console.log(countElements(arrA, arrB)); 
+

@@ -1,16 +1,20 @@
-function calculateTax(incomes) {
-    var totalTax = 0;
-    for (var i = 0; i < incomes.length; i++) {
-        var income = incomes[i];
-        if (income <= 20) {
-            totalTax += income * 0.05;
-        } else if (income <= 50) {
-            totalTax += income * 0.1;
+function calculateHotelCost(checkIn, checkOut) {
+    var cost = 0;
+    if (checkOut <= checkIn) {
+        if (checkOut <= 8) {
+            cost = 160;
         } else {
-            totalTax += income * 0.2;
+            cost = 160 + (checkOut - 8) * 40;
         }
+    } else {
+        var hours = checkOut - checkIn;
+        if (hours <= 2) {
+            cost = 70*hours;
+        }else{
+            cost = 70*2 + (hours - 2)*50;
+        }
+        
     }
-    return totalTax;
+    return cost;
 }
-var incomes = [10, 30, 60];
-console.log(calculateTax(incomes));
+console.log(calculateHotelCost(8, 20)); 

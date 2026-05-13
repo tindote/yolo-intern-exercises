@@ -1,9 +1,16 @@
-function sumDigits(n) {
-    let sum = 0;
-    while (n > 0) {
-        sum += n % 10;
-        n = Math.floor(n / 10);
+function calculateTax(incomes) {
+    var totalTax = 0;
+    for (var i = 0; i < incomes.length; i++) {
+        var income = incomes[i];
+        if (income <= 20) {
+            totalTax += income * 0.05;
+        } else if (income <= 50) {
+            totalTax += income * 0.1;
+        } else {
+            totalTax += income * 0.2;
+        }
     }
-    return sum;
-}   
-console.log(sumDigits(123));
+    return totalTax;
+}
+var incomes = [10, 30, 60];
+console.log(calculateTax(incomes));

@@ -1,12 +1,9 @@
-function displayFibonacci(n) {
-    let a = 0, b = 1, c;
-    let result = [];
-    for (let i = 0; i < n; i++) {
-        result.push(a);
-        c = a + b;
-        a = b;
-        b = c;
+function sumDigits(n) {
+    let sum = 0;
+    while (n > 0) {
+        sum += n % 10;
+        n = Math.floor(n / 10);
     }
-    return result;
-}
-console.log(displayFibonacci(10));
+    return sum;
+}   
+console.log(sumDigits(123));

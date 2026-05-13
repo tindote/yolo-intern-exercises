@@ -1,4 +1,14 @@
-function getRandomValue(a) {
-    return Math.random() * a;
+function countDifferentElements(arrA, arrB) {
+    let count = 0;
+    for (let i = 0; i < arrA.length; i++) {
+        for (let j = 0; j < arrB.length; j++) {
+            if (arrA[i] === arrB[j]) {
+                count++;
+            }
+        }
+    }
+    return arrA.length - count;
 }
-console.log(getRandomValue(10));
+const arrA = [1, 2, 3, 4];
+const arrB = [3, 4, 5, 6];
+console.log(countDifferentElements(arrA, arrB)); 

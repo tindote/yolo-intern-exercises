@@ -1,26 +1,52 @@
+/**
+ * Merge 2 arrays sorted DESC into ASC result
+ * Using two pointers
+ */
 function mergeSortedArraysDecToAsc(arr1, arr2) {
-    let mergedArray = [];
-    let i = 0, j = 0;
+    let i = 0;
+    let j = 0;
+
+    const result = [];
+
     while (i < arr1.length && j < arr2.length) {
+        // vì arr giảm dần → lấy số lớn trước
         if (arr1[i] > arr2[j]) {
-            mergedArray.push(arr1[i]);
+            result.push(arr1[i]);
             i++;
         } else {
-            mergedArray.push(arr2[j]);
+            result.push(arr2[j]);
             j++;
         }
     }
+
     while (i < arr1.length) {
-        mergedArray.push(arr1[i]);
+        result.push(arr1[i]);
         i++;
     }
+
     while (j < arr2.length) {
-        mergedArray.push(arr2[j]);
+        result.push(arr2[j]);
         j++;
     }
-    return mergedArray.reverse();
+
+    // reverse để ra ASC
+    return result.reverse();
 }
-let array1 = [7, 5, 3, 1];
-let array2 = [12, 10, 8, 6, 4, 2];
-let mergedResult = mergeSortedArraysDecToAsc(array1, array2);
-console.log(mergedResult);
+
+function runTest(arr1, arr2) {
+    const result = mergeSortedArraysDecToAsc(arr1, arr2);
+
+    console.log("====================================");
+    console.log("MERGE SORTED ARRAYS TEST");
+    console.log("====================================");
+
+    console.log("Array 1 (DESC):", arr1);
+    console.log("Array 2 (DESC):", arr2);
+    console.log("------------------------------------");
+
+    console.log("Merged (ASC):", result);
+
+    console.log("====================================\n");
+}
+
+runTest([7, 5, 3, 1], [12, 10, 8, 6, 4, 2]);

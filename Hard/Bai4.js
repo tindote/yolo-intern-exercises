@@ -1,26 +1,53 @@
+/**
+ * Merge 2 arrays sorted in DESC order into one DESC array
+ * Using two pointers technique
+ */
 function mergeSortedArraysDec(arr1, arr2) {
-    let mergedArray = [];
-    let i = 0, j = 0;
+    let i = 0;
+    let j = 0;
+
+    const result = [];
+
     while (i < arr1.length && j < arr2.length) {
         if (arr1[i] > arr2[j]) {
-            mergedArray.push(arr1[i]);
+            result.push(arr1[i]);
             i++;
         } else {
-            mergedArray.push(arr2[j]);
+            result.push(arr2[j]);
             j++;
         }
     }
+
     while (i < arr1.length) {
-        mergedArray.push(arr1[i]);
+        result.push(arr1[i]);
         i++;
     }
+
     while (j < arr2.length) {
-        mergedArray.push(arr2[j]);
+        result.push(arr2[j]);
         j++;
     }
-    return mergedArray;
+
+    return result;
 }
-let array1 = [7, 5, 3, 1];
-let array2 = [12, 10, 8, 6, 4, 2];
-let mergedResult = mergeSortedArraysDec(array1, array2);
-console.log(mergedResult);
+
+function runTest() {
+    const array1 = [7, 5, 3, 1];
+    const array2 = [12, 10, 8, 6, 4, 2];
+
+    console.log("====================================");
+    console.log("MERGE SORTED ARRAYS TEST");
+    console.log("====================================");
+
+    console.log("Array 1 (DESC):", array1);
+    console.log("Array 2 (DESC):", array2);
+    console.log("------------------------------------");
+
+    const result = mergeSortedArraysDec(array1, array2);
+
+    console.log("Merged Result (DESC):", result);
+
+    console.log("====================================");
+}
+
+runTest();

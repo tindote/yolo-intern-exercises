@@ -26,3 +26,4 @@ function runTest() {
 }
 
 runTest();
+module.exports = { shuffleArray, runTest };

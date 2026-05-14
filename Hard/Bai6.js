@@ -136,3 +136,4 @@ runTest(5);
 runTest(1000);
 runTest(10001234105);
 runTest(123456789123456789);
+module.exports = { readHundred, readMillion, convertMoneyFromNumberToString, runTest };

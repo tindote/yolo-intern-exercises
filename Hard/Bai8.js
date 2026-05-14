@@ -36,3 +36,4 @@ const result = countStrAInStrB(strA, strB);
 
 console.log("-----------------------------");
 console.log(`Occurrences: ${result}`);
+module.exports = { escapeRegex, countStrAInStrB };

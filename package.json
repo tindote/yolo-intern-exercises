@@ -1,0 +1,25 @@
+{
+  "name": "yolo-intern-exercises",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tindote/yolo-intern-exercises.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/tindote/yolo-intern-exercises/issues"
+  },
+  "homepage": "https://github.com/tindote/yolo-intern-exercises#readme",
+  "devDependencies": {
+    "jest": "^30.4.2"
+  }
+}
+

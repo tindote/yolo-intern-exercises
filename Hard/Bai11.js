@@ -12,3 +12,4 @@ console.log(countTrailingZeros(5));
 console.log(countTrailingZeros(10));  
 console.log(countTrailingZeros(25));  
 console.log(countTrailingZeros(100)); 
+module.exports = countTrailingZeros;

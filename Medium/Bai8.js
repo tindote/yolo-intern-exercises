@@ -8,3 +8,4 @@ function findStringInString(str1, str2) {
 }
 console.log(findStringInString("Hello world", "world")); // Output: 6
 console.log(findStringInString("Hello world", "abc")); // Output: false
+module.exports = findStringInString;

@@ -4,3 +4,4 @@ function cutStringByStartAndLength (str, start, length) {
 
 const str = "Hello, World!";
 console.log(cutStringByStartAndLength(str, 1, 5));
+module.exports = cutStringByStartAndLength;

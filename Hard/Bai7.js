@@ -44,3 +44,4 @@ function printMoneyExchange(data) {
 const data = moneyExchange(1557000);
 
 printMoneyExchange(data);
+module.exports = { moneyExchange, printMoneyExchange };

@@ -18,3 +18,5 @@ function calculateHotelCost(checkIn, checkOut) {
     return cost;
 }
 console.log(calculateHotelCost(8, 20)); 
+
+module.exports = calculateHotelCost;

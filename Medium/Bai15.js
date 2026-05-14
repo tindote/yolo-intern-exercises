@@ -7,3 +7,4 @@ function sumDigits(n) {
     return sum;
 }
 console.log(sumDigits(123));
+module.exports = sumDigits;

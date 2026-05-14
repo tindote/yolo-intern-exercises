@@ -51,3 +51,4 @@ function runTest() {
 }
 
 runTest();
+module.exports = { mergeSortedArraysAsc, runTest };

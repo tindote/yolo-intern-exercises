@@ -9,3 +9,4 @@ function calculateTimeTwoArray(arr1, arr2) {
 const arr1 = [1, 2, 3];
 const arr2 = [4, 5, 6];
 console.log(calculateTimeTwoArray(arr1, arr2));
+module.exports = calculateTimeTwoArray;

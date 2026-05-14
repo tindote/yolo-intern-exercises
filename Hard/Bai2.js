@@ -8,3 +8,4 @@ function getRandomNumber(min, max) {
 
 console.log("Random (5 - 10):", getRandomNumber(5, 10));
 console.log("Random (10 - 5):", getRandomNumber(10, 5));
+module.exports = getRandomNumber;

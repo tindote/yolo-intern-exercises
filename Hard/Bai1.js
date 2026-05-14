@@ -33,3 +33,4 @@ function runTest(input) {
 
 runTest("Hello World");
 runTest("JavaScript is fun");
+module.exports = { reverseWord, reverseCharInWords, runTest };

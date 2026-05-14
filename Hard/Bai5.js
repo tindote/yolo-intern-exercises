@@ -50,3 +50,4 @@ function runTest(arr1, arr2) {
 }
 
 runTest([7, 5, 3, 1], [12, 10, 8, 6, 4, 2]);
+module.exports = { mergeSortedArraysDecToAsc, runTest };

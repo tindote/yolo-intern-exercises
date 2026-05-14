@@ -10,3 +10,4 @@ function displayFibonacci(n) {
     return result;
 }
 console.log(displayFibonacci(10));
+module.exports = displayFibonacci;

@@ -19,3 +19,4 @@ function lastNonZeroDigit(n) {
 console.log(lastNonZeroDigit(5));  
 console.log(lastNonZeroDigit(10)); 
 console.log(lastNonZeroDigit(20)); 
+module.exports = lastNonZeroDigit;

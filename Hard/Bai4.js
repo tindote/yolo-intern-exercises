@@ -51,4 +51,4 @@ function runTest() {
 }
 
 runTest();
-module.exports = { mergeSortedArraysDec, runTest };
+module.exports = { mergeSortedArraysDec};

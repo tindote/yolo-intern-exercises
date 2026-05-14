@@ -4,6 +4,7 @@ function swap3Number(a,b,c){
     b = c;
     c= temp;
     console.log(a + ", "+b+", "+c)
+    return [a,b,c];
 }
 
 swap3Number(1,2,3);

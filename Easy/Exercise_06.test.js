@@ -1,8 +1,19 @@
-const exercise = require('./Exercise_06');
+const sumEven = require('./Exercise_06');
 
-describe('Exercise_06', () => {
-  test('should pass basic test', () => {
-    // Add your test logic here
-    expect(true).toBe(true);
+describe('sumEven', () => {
+  test('sums even numbers in mixed array', () => {
+    expect(sumEven([1, 2, 3, 4, 5])).toBe(6);
+  });
+
+  test('sums all even numbers', () => {
+    expect(sumEven([2, 4, 6])).toBe(12);
+  });
+
+  test('sums no even numbers', () => {
+    expect(sumEven([1, 3, 5])).toBe(0);
+  });
+
+  test('returns 0 for empty array', () => {
+    expect(sumEven([])).toBe(0);
   });
 });

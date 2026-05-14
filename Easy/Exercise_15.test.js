@@ -1,8 +1,19 @@
-const exercise = require('./Exercise_15');
+const calculateFactorial = require('./Exercise_15');
 
-describe('Exercise_15', () => {
-  test('should pass basic test', () => {
-    // Add your test logic here
-    expect(true).toBe(true);
+describe('calculateFactorial', () => {
+  test('calculates factorial of 5', () => {
+    expect(calculateFactorial(5)).toBe(120);
+  });
+
+  test('calculates factorial of 0', () => {
+    expect(calculateFactorial(0)).toBe(1);
+  });
+
+  test('calculates factorial of 1', () => {
+    expect(calculateFactorial(1)).toBe(1);
+  });
+
+  test('calculates factorial of 3', () => {
+    expect(calculateFactorial(3)).toBe(6);
   });
 });

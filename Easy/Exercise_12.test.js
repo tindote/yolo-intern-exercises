@@ -1,8 +1,19 @@
-const exercise = require('./Exercise_12');
+const findAverage = require('./Exercise_12');
 
-describe('Exercise_12', () => {
-  test('should pass basic test', () => {
-    // Add your test logic here
-    expect(true).toBe(true);
+describe('findAverage', () => {
+  test('calculates average of positive numbers', () => {
+    expect(findAverage([1, 2, 3])).toBe(2);
+  });
+
+  test('calculates average of mixed numbers', () => {
+    expect(findAverage([1, -1, 0])).toBe(0);
+  });
+
+  test('calculates average of single element', () => {
+    expect(findAverage([5])).toBe(5);
+  });
+
+  test('returns 0 for empty array', () => {
+    expect(findAverage([])).toBe(0);
   });
 });

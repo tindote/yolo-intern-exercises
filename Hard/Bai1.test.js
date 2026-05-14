@@ -1,8 +1,15 @@
-const bai = require('./Bai1');
+const { reverseCharInWords } = require('./Bai1');
 
-describe('Bai1', () => {
-  test('should pass basic test', () => {
-    // Add your test logic here
-    expect(true).toBe(true);
+describe('reverseCharInWords', () => {
+  test('reverses characters in each word', () => {
+    expect(reverseCharInWords('hello world')).toBe('olleh dlrow');
+  });
+
+  test('preserves single-word input', () => {
+    expect(reverseCharInWords('abc')).toBe('cba');
+  });
+
+  test('returns empty string for empty input', () => {
+    expect(reverseCharInWords('')).toBe('');
   });
 });

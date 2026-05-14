@@ -3,3 +3,4 @@ function calculatePow(a,b){
 }
 
 console.log(calculatePow(2,3));
+module.exports = calculatePow;

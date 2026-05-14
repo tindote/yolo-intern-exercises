@@ -9,3 +9,4 @@ function findIndex(arr, value) {
 
 var data = [1, 3, 6, 3, 7, 9, 8, 0, 11, 32, 43];
 console.log(findIndex(data, 7));
+module.exports = findIndex;

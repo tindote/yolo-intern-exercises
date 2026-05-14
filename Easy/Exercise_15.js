@@ -10,3 +10,4 @@ function calculateFactorial(n) {
 }
 
 console.log(calculateFactorial(5));
+module.exports = calculateFactorial;

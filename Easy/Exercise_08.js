@@ -7,3 +7,4 @@ function checkPrime(a){
     return "co";
 }
 console.log(checkPrime(13));
+module.exports = checkPrime;

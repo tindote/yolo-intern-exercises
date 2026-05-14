@@ -15,3 +15,4 @@ function getRemainder(a,b){
 
 var a = -80, b = 90
 console.log(getRemainder(a,b))
+module.exports = getRemainder;

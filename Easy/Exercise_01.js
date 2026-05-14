@@ -7,3 +7,4 @@ function swap3Number(a,b,c){
 }
 
 swap3Number(1,2,3);
+module.exports = swap3Number;

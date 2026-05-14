@@ -17,3 +17,4 @@ if (count ==2){
 }else{
     console.log("Cung le");
 }
+module.exports = test;

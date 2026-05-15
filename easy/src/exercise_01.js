@@ -11,13 +11,13 @@
  * @param {number} number3 - third number
  * @returns {number[]} rotated array [number2, number3, number1]
  */
-
+const isNumber = require("../../utils/validation/isNumber");
 function rotate3Numbers(number1, number2, number3) {
     // Step 1: validate input
     if (
-        typeof number1 !== "number" ||
-        typeof number2 !== "number" ||
-        typeof number3 !== "number"
+        !isNumber(number1) ||
+        !isNumber(number2) ||
+        !isNumber(number3)
     ) {
         throw new TypeError("All inputs must be numbers");
     }

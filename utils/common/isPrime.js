@@ -1,20 +1,20 @@
 /**
  * Checks if a number is prime.
- * 
- * 1. Validate input is an integer
+ * 1. Validate input is a integer number
  * 2. Check if the number is less than or equal to 1 (not prime)
  * 3. Check if the number is less than or equal to 3 (prime)
  * 4. Check if the number is divisible by 2 or 3 (not prime)
  * 5. Check for factors from 5 to the square root of the number
  * 6. If any factor is found, return false (not prime)
- * 7. If no factors are found, return true (prime)
+ * 7. If no factors are found, return true (prime)  
  * @param {number} number - The number to check.
  * @returns {boolean} True if the number is prime, false otherwise.
  */
+const isInteger = require("../validation/isInteger");
 
-function checkPrime(number) {
+function isPrime(number) {
     // Step 1: validate input is an integer
-    if (!Number.isInteger(number)) {
+    if (!isInteger(number)) {
         throw new Error("Input must be an integer");
     }
     // Step 2: check if the number is less than or equal to 1 (not prime)
@@ -38,3 +38,5 @@ function checkPrime(number) {
     // Step 6: if no factors are found, return true (prime)
     return true;
 }
+
+module.exports = isPrime;

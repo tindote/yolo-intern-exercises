@@ -15,10 +15,12 @@
  * @returns {number} calculated power result
  */
 
+const isNumber = require("../../utils/validation/isNumber");
+
 function calculatePower(base, exponent) {
 
     // Step 1: validate input
-    if (typeof base !== "number" || typeof exponent !== "number") {
+    if (!isNumber(base) || !isNumber(exponent)) {
         throw new TypeError("Both inputs must be numbers");
     }
 

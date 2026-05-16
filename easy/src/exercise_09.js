@@ -1,7 +1,6 @@
 /**
  * Gets the remainder of a division operation without using the % operator.
  * 
- * 1. Validate inputs must be numbers
  * 2. Handle division by zero case
  * 3. Handle negative dividend or divisor cases
  * 4. Calculate quotient using integer division
@@ -12,38 +11,33 @@
  * @returns {number} The remainder of the division.
  */
 
-const isNumber = require("../../utils/validation/isNumber");
+const floorNumber = require("../../utils/floorNumber");
+const absNumber = require("../../utils/absNumber");
+
 function getRemainder(dividend, divisor) {
-    // Step 1: validate inputs
-    if (!isNumber(dividend) || !isNumber(divisor)) {
-        throw new TypeError("Both inputs must be numbers");
-    }
-
-    // Step 2: handle division by zero
+    //handle division by zero
     if (divisor === 0) {
-        throw new Error("Cannot divide by zero");
+        throw new Error('Cannot divide by zero, provided calculation: dividend = ' + dividend + ', divisor = ' + divisor);
     }
 
-    // Step 3: handle negative cases
-    const isNegativeDividend = dividend < 0;
-    const isNegativeDivisor = divisor < 0;
+    //store original signs for later use   
+    const isDividendNegative = dividend < 0;
 
-    // Convert to positive for calculation
-    dividend = Math.abs(dividend);
-    divisor = Math.abs(divisor);
+    //work with absolute values for easier calculation
+    const absoluteDividend = absNumber(dividend);
+    const absoluteDivisor = absNumber(divisor);
+    
+    //calculate quotient using integer division
+    const quotient = floorNumber(absoluteDividend / absoluteDivisor);
 
-    // Step 4: calculate quotient using integer division
-    const quotient = Math.floor(dividend / divisor);
+    //calculate remainder using the formula: remainder = dividend - (quotient * divisor)
+    let remainder = absoluteDividend - (quotient * absoluteDivisor);
 
-    // Step 5: calculate remainder using the formula
-    let remainder = dividend - (quotient * divisor);
-
-    // Step 6: adjust sign of remainder based on input signs
-    if (isNegativeDividend && !isNegativeDivisor) {
-        remainder = -remainder;
-    } else if (!isNegativeDividend && isNegativeDivisor) {
+    //apply the correct sign to the remainder
+    if (isDividendNegative) {
         remainder = -remainder;
     }
 
     return remainder;
 }
+

@@ -15,26 +15,26 @@
 function checkPrime(number) {
     // Step 1: validate input is an integer
     if (!Number.isInteger(number)) {
-        throw new Error("Input must be an integer");
+        throw new Error('Input must be an integer, provided: ' + number);
     }
     // Step 2: check if the number is less than or equal to 1 (not prime)
     if (number <= 1) {
-        return false;
+        return 'không';
     }
     // Step 3: check if the number is less than or equal to 3 (prime)
     if (number <= 3) {
-        return true;
+        return 'có';
     }
     // Step 4: check if the number is divisible by 2 or 3 (not prime)
     if (number % 2 === 0 || number % 3 === 0) {
-        return false;
+        return 'không';
     }
     // Step 5: check for factors from 5 to the square root of the number
     for (let i = 5; i * i <= number; i += 6) {
         if (number % i === 0 || number % (i + 2) === 0) {
-            return false;
+            return 'không';
         }
     }
     // Step 6: if no factors are found, return true (prime)
-    return true;
+    return 'có';
 }

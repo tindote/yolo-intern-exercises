@@ -1,8 +1,20 @@
+/**
+ * Finds the index of a value in an array.
+ * 1. Iterate through the array to find the value
+ * 2. If the value is found, return its index
+ * 3. If the value is not found after iterating through the entire array, return -1
+ * @param {number[]} arr - The array to search.
+ * @param {number} value - The value to find.
+ * @returns {number} The index of the value, or -1 if not found.
+ */
 function findIndex(arr, value) {
+    // Iterate through the array to find the value
     for (var i = 0; i < arr.length; i++) {
         if (arr[i] == value) {
             return i;
         }
     }
+
+    // If the value is not found after iterating through the entire array, return -1
     return -1;
 }

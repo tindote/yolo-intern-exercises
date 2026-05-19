@@ -8,7 +8,7 @@
  * @returns {Array} The sorted array.
  */
 const floorNumber = require("../../utils/floorNumber");
-const sortByRule = require("../../utils/sortByRule");
+const sortByRule = require("../../utils/sortArrayByRule");
 function sortByRule(array, rule) {
     // Handle empty array case
     if (array.length === 0) {

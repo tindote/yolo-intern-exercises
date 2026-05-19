@@ -1,30 +1,11 @@
-function mergeSortedArraysDecToAsc(arr1, arr2) {
-    let i = 0;
-    let j = 0;
-
-    const result = [];
-
-    while (i < arr1.length && j < arr2.length) {
-        // vì arr giảm dần → lấy số lớn trước
-        if (arr1[i] > arr2[j]) {
-            result.push(arr1[i]);
-            i++;
-        } else {
-            result.push(arr2[j]);
-            j++;
-        }
-    }
-
-    while (i < arr1.length) {
-        result.push(arr1[i]);
-        i++;
-    }
-
-    while (j < arr2.length) {
-        result.push(arr2[j]);
-        j++;
-    }
-
-    // reverse để ra ASC
-    return result.reverse();
+/**
+ * Connect two descending sorted arrays and reverse it
+ * @param {array} arr1 array sorted by decs
+ * @param {array} arr2 array sorted by decs
+ * @returns {array} result after connect two arrays
+ */
+const conectReversedSortedArraysByRule = require("../../utils/conectReversedSortedArraysByRule")
+function connectSortedArraysDecToAsc(arr1, arr2) {
+    return conectReversedSortedArraysByRule(arr1, arr2, (a, b) => a - b > 0);
 }
+

@@ -31,3 +31,5 @@ function sortByRule(array, compareFn) {
     }
     return [...sortByRule(left, compareFn), pivot, ...sortByRule(right, compareFn)];
 }
+
+module.exports = sortByRule;

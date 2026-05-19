@@ -1,17 +1,12 @@
-function lastNonZeroDigit(n) {
-    let result = 1;
+function shuffleArray(arr) {
+    const result = arr.slice(); // copy mảng để không mutate input
 
-    for (let i = 2; i <= n; i++) {
-        result *= i;
+    for (let i = result.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
 
-        // loại bỏ số 0 ở cuối
-        while (result % 10 === 0) {
-            result = result / 10;
-        }
-
-        // giữ số nhỏ để tránh tràn
-        result = result % 100000;
+        // swap
+        [result[i], result[j]] = [result[j], result[i]];
     }
 
-    return result % 10;
+    return result;
 }

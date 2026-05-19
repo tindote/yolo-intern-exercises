@@ -1,10 +1,17 @@
-function countTrailingZeros(n) {
-    let count = 0;
+function lastNonZeroDigit(n) {
+    let result = 1;
 
-    while (n >= 5) {
-        n = Math.floor(n / 5);
-        count += n;
+    for (let i = 2; i <= n; i++) {
+        result *= i;
+
+        // loại bỏ số 0 ở cuối
+        while (result % 10 === 0) {
+            result = result / 10;
+        }
+
+        // giữ số nhỏ để tránh tràn
+        result = result % 100000;
     }
 
-    return count;
+    return result % 10;
 }

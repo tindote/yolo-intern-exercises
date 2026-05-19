@@ -1,18 +1,10 @@
-function countEven(data) {
+/**
+ * Counts the number of odd numbers in an array.
+ * @param {number[]} numbers - An array of numbers.
+ * @returns {number} The count of odd numbers.
+ */
+const countByRule = require("../../utils/countByRule");
 
-    // Step 1: validate input
-    if (!Array.isArray(data)) {
-        throw new TypeError("Input must be an array");
-    }
-
-    let count = 0;
-
-    // Step 2: count even numbers
-    for (let i = 0; i < data.length; i++) {
-        if (data[i] % 2 === 0) {
-            count++;
-        }
-    }
-
-    return count;
+function countOddNumbers(numbers) {
+    return countByRule(numbers, (num) => num % 2 !== 0);
 }

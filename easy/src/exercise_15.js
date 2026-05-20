@@ -12,6 +12,11 @@ function calculateFactorial(number) {
         return 1;
     }
 
+    // Handle negative input case
+    if(number < 0){
+        throw new TypeError("Negative number do not have factorial");
+    }
+
     /// Iterate from 2 to the given number and multiply to calculate the factorial
     var factorial = 1;
     for (var i = 2; i <= number; i++) {
@@ -21,3 +26,4 @@ function calculateFactorial(number) {
     // Return the factorial value
     return factorial;
 }
+

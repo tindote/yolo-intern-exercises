@@ -7,15 +7,23 @@
  * @param {Array} arr need to shuffle
  * @returns {Array} array after shuffle
  */
-const floorNumber = require("../../")
+const floorNumber = require("../../utils/floorNumber");
 function shuffleArray(arr) {
+    // Clone input 
+    let result = arr;
     // Handle empty case
-    if(arr.length === 0){
+    if (result.length === 0) {
         return [];
     }
 
     // Loop array from last index
-    for(let i = arr.length - 1; i >= 1; i--){
-        let randomIndex = Math.floor(Math.random() * )
+    for (let i = result.length - 1; i > 0; i--) {
+        let randomIndex = floorNumber(Math.random() * i);
+        let temp = result[i];
+        result[i] = result[randomIndex];
+        result[randomIndex] = temp;
     }
+
+    return result;
 }
+

@@ -2,9 +2,9 @@
  * Exchange money into smaller units
  * 1. Create array with all units
  * 2. Loop through units array to get max number of each units and add to totalBills
- * 3. 
- * @param {number} money to exchange 
- * @returns 
+ * 3. Return totalBills 
+ * @param {number} money to exchange, money % 1000 === 0
+ * @returns {number} totalBills
  */
 function moneyExchange(money) {
     // array include all units
@@ -14,7 +14,7 @@ function moneyExchange(money) {
     let totalBills = 0;
 
     const result = [];
-
+    // loop through bills
     for (let bill of bills) {
         const quantity = Math.floor(moneyTemp / bill);
         if (quantity > 0) {
@@ -22,4 +22,7 @@ function moneyExchange(money) {
             moneyTemp %= bill;
         }
     }
+    return totalBills;
 }
+
+console.log(moneyExchange(5000000))

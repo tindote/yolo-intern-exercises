@@ -1,17 +1,32 @@
-function lastNonZeroDigit(n) {
-    let result = 1;
-
-    for (let i = 2; i <= n; i++) {
-        result *= i;
-
-        // loại bỏ số 0 ở cuối
-        while (result % 10 === 0) {
-            result = result / 10;
-        }
-
-        // giữ số nhỏ để tránh tràn
-        result = result % 100000;
+/**
+ * Return last digit that is not zero from n!.
+ * 1. Handle negative input case.
+ * 2. Handle input is 0 or 1.
+ * 3. Loop from 2 to number, each time check if number is devisible to 5, then add number / 5 to count.
+ * 4. Return number. 
+ * 
+ * @param {number} number input
+ * @returns {number} last digit thats is not zero
+ */
+function lastNonZeroDigitInFactory(number) {
+    // Handle negative
+    if(number < 0){
+        throw new TypeError("Cannot factorial negative number");
     }
 
-    return result % 10;
+    // Handle input is 0 or 1
+    if(number < 1){
+        return 1;
+    }
+
+    let result = 1;
+    // Loop from 2 to number
+    for(let i = 2; i <= number; i++){
+        result *= i;
+        while(result % 10 === 0){
+            result = result / 10;
+        }
+        result = result % 10;
+    }
+    return result;
 }

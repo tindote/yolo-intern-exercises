@@ -18,3 +18,4 @@ function findIndex(arr, value) {
     // If the value is not found after iterating through the entire array, return -1
     return -1;
 }
+module.exports = findIndex;

@@ -38,3 +38,4 @@ function checkPrime(number) {
     // Step 6: if no factors are found, return true (prime)
     return 'có';
 }
+module.exports = checkPrime;

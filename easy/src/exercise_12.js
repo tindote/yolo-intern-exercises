@@ -25,3 +25,4 @@ function calculateAverageValueOfArray(array) {
     //return the average value
     return average;
 }
+module.exports = calculateAverageValueOfArray;

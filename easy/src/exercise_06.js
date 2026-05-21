@@ -8,3 +8,4 @@ function sumEvenNumbersInArray(array) {
     return sumByRule(array, (num) => num % 2 === 0);
 }
 
+module.exports =sumEvenNumbersInArray;

@@ -27,3 +27,4 @@ function calculateFactorial(number) {
     return factorial;
 }
 
+module.exports = calculateFactorial;

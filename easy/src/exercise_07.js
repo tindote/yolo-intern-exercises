@@ -8,3 +8,4 @@ function sumOddNumbersInArray(array) {
     return sumByRule(array, (num) => num % 2 !== 0);
 }
 
+module.exports = sumOddNumbersInArray;

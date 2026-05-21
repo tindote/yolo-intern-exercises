@@ -41,3 +41,4 @@ function getRemainder(dividend, divisor) {
     return remainder;
 }
 
+module.exports = getRemainder;

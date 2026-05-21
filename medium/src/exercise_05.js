@@ -11,3 +11,5 @@ const mergeArrayByOperation = require("../../utils/mergeArrayByOperation");
 function calculateProductTwoArray(arr1, arr2) {
     return mergeArrayByOperation(arr1, arr2, (a, b) => a * b);
 }
+
+module.exports = calculateProductTwoArray;

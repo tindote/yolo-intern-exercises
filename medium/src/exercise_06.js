@@ -11,3 +11,5 @@ const mergeArrayByOperation = require('../../utils/mergeArrayByOperation');
 function calculateDivideTwoArray(arr1, arr2) {
     return mergeArrayByOperation(arr1, arr2, (a, b) => b !== 0 ? a / b : null);
 }
+
+module.exports = calculateDivideTwoArray;

@@ -40,3 +40,5 @@ function cutStringByStartIndexAndLength (str, start, length) {
     // Return the new string containing the cut substring
     return result;
 }
+
+module.exports = cutStringByStartIndexAndLength;

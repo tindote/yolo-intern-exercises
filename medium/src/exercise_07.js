@@ -31,3 +31,5 @@ function getSubArray(arr,start,end) {
     }  
     return result;
 }
+
+module.exports = getSubArray;

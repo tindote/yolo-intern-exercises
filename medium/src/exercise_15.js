@@ -22,3 +22,5 @@ function sumDigitsInInteger(integer) {
     }
     return sum;
 }
+
+module.exports = sumDigitsInInteger;

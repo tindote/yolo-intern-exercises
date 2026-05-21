@@ -27,6 +27,8 @@ function displayFibonacci(integer) {
     }
 
     // Print the generated Fibonacci numbers
-    console.log(result.trim());
+    return result.trim();
 
 }
+
+module.exports = displayFibonacci;

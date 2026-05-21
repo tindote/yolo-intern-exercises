@@ -49,3 +49,5 @@ function calculateHotelCost(checkIn, checkOut) {
     }
     return cost;
 }
+
+module.exports = calculateHotelCost;

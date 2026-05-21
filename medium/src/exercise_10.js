@@ -10,3 +10,4 @@ function countDifferentElements(arrA, arrB) {
     return arrA.length - sameCount;
 }
 
+module.exports = countDifferentElements;

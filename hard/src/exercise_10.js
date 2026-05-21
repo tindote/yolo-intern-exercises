@@ -27,3 +27,5 @@ function shuffleArray(arr) {
     return result;
 }
 
+
+module.exports = shuffleArray;

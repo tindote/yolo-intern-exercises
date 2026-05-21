@@ -8,3 +8,5 @@ const connectSortedArraysByRule = require("../../utils/connectSortedArraysByRule
 function connectSortedArraysDec(arrA, arrB) {
     return connectSortedArraysByRule(arrA, arrB, (a, b) => a - b > 0);
 }
+
+module.exports = connectSortedArraysDec;

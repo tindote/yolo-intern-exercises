@@ -14,7 +14,7 @@ const ones = ["không", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", 
 function readMoneyFromNumberToString(money) {
     if (typeof money === "number") money = BigInt(money);
 
-    if (money === 0) return 'không đồng';
+    if (money < 10n) return `${ones[money]} đồng`;
 
     const units = ['', 'nghìn', 'triệu', 'tỷ'];
 
@@ -106,8 +106,13 @@ function readThreeDigits(num, isHead) {
             res += " " + ones[unit];
         }
     }
-    else if (ten === 0 && unit > 0) {
-        res += " lẻ " + ones[unit];
+    else if (ten === 0 && unit > 0 ) {
+        if(!isHead){
+            res += " lẻ " + ones[unit];
+        }else{
+            res += ' '+ones[unit];
+        }
     }
     return res.trim();
 }
+module.exports = readMoneyFromNumberToString;

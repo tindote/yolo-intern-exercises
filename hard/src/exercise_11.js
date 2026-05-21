@@ -11,7 +11,7 @@
 function lastNonZeroDigitInFactory(number) {
     // Handle negative
     if(number < 0){
-        throw new TypeError("Cannot factorial negative number");
+        throw new Error("Cannot factorial negative number");
     }
 
     // Handle input is 0 or 1
@@ -26,7 +26,8 @@ function lastNonZeroDigitInFactory(number) {
         while(result % 10 === 0){
             result = result / 10;
         }
-        result = result % 10;
+        result = result % 10000;
     }
-    return result;
+    return result % 10;
 }
+module.exports = lastNonZeroDigitInFactory;

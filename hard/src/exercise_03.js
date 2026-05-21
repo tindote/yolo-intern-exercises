@@ -16,3 +16,5 @@ function mergeSortedArraysAsc(arrA, arrB) {
     return connectSortedArraysByRule(arrA, arrB, (a, b) => a - b < 0);
 
 }
+
+module.exports = mergeSortedArraysAsc;

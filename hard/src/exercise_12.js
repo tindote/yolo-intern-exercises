@@ -28,3 +28,5 @@ function countZerosInFactorial(number) {
 
     return count;
 }
+
+module.exports = countZerosInFactorial;

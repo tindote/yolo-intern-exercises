@@ -36,3 +36,4 @@ function reverseCharInWordsOfString(str) {
     }
     return result;
 }
+module.exports = reverseCharInWordsOfString;

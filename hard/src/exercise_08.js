@@ -9,11 +9,9 @@
 function moneyExchange(money) {
     // array include all units
     const bills = [500000, 100000, 50000, 10000, 5000, 2000, 1000];
-
     let moneyTemp = money;
     let totalBills = 0;
 
-    const result = [];
     // loop through bills
     for (let bill of bills) {
         const quantity = Math.floor(moneyTemp / bill);
@@ -25,4 +23,5 @@ function moneyExchange(money) {
     return totalBills;
 }
 
-console.log(moneyExchange(5000000))
+
+module.exports = moneyExchange;

@@ -38,3 +38,5 @@ function countStringInString(strA, strB){
     return count;
 }   
 
+
+module.exports = countStringInString;

@@ -32,3 +32,5 @@ function calculateTax(incomes) {
     }
     return totalTax;
 }   
+
+module.exports = calculateTax;

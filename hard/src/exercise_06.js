@@ -9,3 +9,5 @@ function connectSortedArraysAscToDesc(arr1, arr2) {
     return conectReversedSortedArraysByRule(arr1, arr2, (a, b) => a - b < 0);
 }
 
+
+module.exports = connectSortedArraysAscToDesc;

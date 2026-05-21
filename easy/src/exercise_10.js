@@ -10,3 +10,4 @@ const findByRule = require("../../utils/findByRule");
 function findMaxNumberInArray(arr) {   
     return findByRule(arr, (current, max) => current > max);
 }
+module.exports = findMaxNumberInArray;

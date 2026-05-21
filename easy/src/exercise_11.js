@@ -10,3 +10,5 @@ const findByRule = require("../../utils/findByRule");
 function findMinNumberInArray(arr) {
     return findByRule(arr, (current, min) => current < min);
 }
+
+module.exports = findMinNumberInArray;

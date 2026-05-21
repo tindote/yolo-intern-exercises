@@ -48,6 +48,7 @@ function calculatePower(base, exponent) {
     return result;
 }
 
+module.exports = calculatePower;
 /**
  * Calculates the power of a base raised to an integer exponent
  * 1. Use fast exponentiation algorithm (exponentiation by squaring)

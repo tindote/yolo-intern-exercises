@@ -10,3 +10,4 @@ function getRandomValueFromZero(value) {
     // Generate and return the random value
     return Math.random() * value;
 }
+module.exports = getRandomValueFromZero

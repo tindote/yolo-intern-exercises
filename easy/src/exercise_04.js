@@ -9,3 +9,4 @@ function countEvenNumbers(numbers) {
     return countByRule(numbers, (num) => num % 2 === 0);
 }
 
+module.exports = countEvenNumbers;

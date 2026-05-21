@@ -9,7 +9,7 @@
  */
 const floorNumber = require("../../utils/floorNumber");
 const sortByRule = require("../../utils/sortArrayByRule");
-function sortByRule(array, rule) {
+function sortByString(array, rule) {
     // Handle empty array case
     if (array.length === 0) {
         return array;
@@ -27,3 +27,4 @@ function sortByRule(array, rule) {
         return sortByRule(array, (element, pivot) => pivot - element);
     }
 }
+module.exports = sortByString;

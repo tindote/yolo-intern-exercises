@@ -17,7 +17,7 @@ function cutStringByStartAndEndIndex (str, start, end) {
         return "";
     }
     // Handle out of bounds indices
-    if (start < 0 || end >= str.length || start > end) {
+    if (start < 0 || end > str.length || start > end) {
         throw new Error("Invalid start or end index");
     }
 
@@ -32,3 +32,5 @@ function cutStringByStartAndEndIndex (str, start, end) {
     // Return the new string containing the cut substring
     return result;
 }
+
+module.exports = cutStringByStartAndEndIndex;

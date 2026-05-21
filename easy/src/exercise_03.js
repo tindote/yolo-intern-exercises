@@ -27,4 +27,5 @@ function checkParity(firstNumber, secondNumber) {
     //mixed parity
     return 'One even and one odd';
 }
+module.exports = checkParity;
 

@@ -21,3 +21,4 @@ function connectTwoArrays(arr1, arr2) {
     }
     return result;
 }
+module.exports = connectTwoArrays;

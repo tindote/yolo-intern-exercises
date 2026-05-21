@@ -22,3 +22,4 @@ function reverseNumbericArray(array) {
     //return the reversed array
     return reversed;
 }
+module.exports = reverseNumbericArray;

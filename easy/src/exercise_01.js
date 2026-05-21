@@ -22,3 +22,4 @@ function rotate3Numbers(number1, number2, number3) {
     //return result
     return [rotated1, rotated2, rotated3];
 }
+module.exports = rotate3Numbers;

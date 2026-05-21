@@ -8,3 +8,5 @@ const countByRule = require("../../utils/countByRule");
 function countOddNumbers(numbers) {
     return countByRule(numbers, (num) => num % 2 !== 0);
 }
+
+module.exports = countOddNumbers;

@@ -15,3 +15,5 @@ function getRandomValueIncludeNegative(value) {
     // Generate and return the random value
     return Math.random() * (2 * value) - value;
 }
+
+module.exports = getRandomValueIncludeNegative;

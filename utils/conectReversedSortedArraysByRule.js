@@ -14,11 +14,11 @@ function connectReversedSortedArraysByRule(arrA, arrB, compareFn) {
     const lengthB = arrB.length;
 
     if (lengthA === 0) {
-        return arrB;
+        return arrB.reverse();
     }
 
     if (lengthB === 0) {
-        return arrA;
+        return arrA.reverse();
     }
 
     const result = new Array(lengthA + lengthB);

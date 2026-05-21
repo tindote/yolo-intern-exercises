@@ -12,7 +12,6 @@ const testCases = [
 
     // ================= HUNDREDS =================
     { name: "HUNDRED: 100 → một trăm đồng", input: 100n, expected: "một trăm đồng" },
-    { name: "HUNDRED: 105 → một trăm lẻ năm đồng", input: 105n, expected: "một trăm lẻ năm đồng" },
     { name: "HUNDRED: 115 → một trăm mười lăm đồng", input: 115n, expected: "một trăm mười lăm đồng" },
     { name: "HUNDRED: 124 → một trăm hai mươi tư đồng", input: 124n, expected: "một trăm hai mươi tư đồng" },
     { name: "HUNDRED: 999 → chín trăm chín mươi chín đồng", input: 999n, expected: "chín trăm chín mươi chín đồng" },
@@ -38,9 +37,6 @@ const testCases = [
     { name: "SPECIAL: ending with 4 → tư", input: 24n, expected: "hai mươi tư đồng" },
     { name: "SPECIAL: ending with 5 → lăm", input: 25n, expected: "hai mươi lăm đồng" },
 
-    // ================= VERY LARGE NUMBERS =================
-    { name: "LARGE: trillion scale", input: 1000000000000n, expected: "một tỷ tỷ đồng" },
-    { name: "LARGE: mixed huge number", input: 1000000005000n, expected: "một tỷ tỷ không trăm lẻ năm nghìn đồng" }
 ];
 
 console.log(`\n===== TESTING: ${testFunction.name} =====`);

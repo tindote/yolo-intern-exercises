@@ -3,7 +3,7 @@
  * @param {number[]} numbers - An array of numbers.
  * @returns {number} The count of even numbers.
  */
-const countByRule = require("../../utils/countByRule");
+const countByRule = require("../../utils/countByRule.js");
 
 function countEvenNumbers(numbers) {
     return countByRule(numbers, (num) => num % 2 === 0);

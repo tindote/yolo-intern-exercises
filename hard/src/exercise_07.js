@@ -26,7 +26,7 @@ function readMoneyFromNumberToString(money) {
         let chunk = money % 1000n;
         // Ignore case: three digits is 000
         if (chunk !== 0n) {
-            let text = readThreeDigits(chunk, money / 1000n === 0n);
+            let text = readThreeDigits(chunk, (money / 1000n === 0n));
             let unit = '';
             if (index > 0 && index <= 5) {
                 unit = units[index % 3];

@@ -28,11 +28,26 @@ const testCases = [
     { name: "ZERO: [0,1,2] → 1 odd", input: [0, 1, 2], expected: 1 },
 
     // ================= LARGE NUMBERS =================
-    { name: "LARGE: [999999,1000000,777777] → 2 odds", input: [999999, 1000000, 777777], expected: 2 }
+    { name: "LARGE: [999999,1000000,777777] → 2 odds", input: [999999, 1000000, 777777], expected: 2 },
+    
+    
+    // ================= TYPE CHECK ==================
+    { name: "INVALID: input must be array", input: {}, expected: null, expectThrow: true },
+    { name: "INVALID: input must be array", input: 'hello', expected: null, expectThrow: true },
+    { name: "INVALID: input must be array", input: 1, expected: null, expectThrow: true },
+    { name: "INVALID: input must be array", input: true, expected: null, expectThrow: true },
+
+    { name: "INVALID: all element must be integer", input: [0, 1.5, 2, 3], expected: null, expectThrow: true },
+    { name: "INVALID: all element must be integer", input: [0, "1.5", 2, 3], expected: null, expectThrow: true },
+    { name: "INVALID: all element must be integer", input: [0, true, 2, 3], expected: null, expectThrow: true },
+    { name: "INVALID: all element must be integer", input: [0, null, 2, 3], expected: null, expectThrow: true }
+
 ];
 
 console.log(`\n===== TESTING: ${testFunction.name} =====`);
 
 for (const tc of testCases) {
-    test(tc.name, () => testFunction(tc.input), tc.expected);
+    test(tc.name, () => testFunction(tc.input), tc.expected, {
+        expectThrow: tc.expectThrow || false
+    });
 }

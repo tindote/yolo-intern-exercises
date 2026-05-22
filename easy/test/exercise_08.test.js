@@ -6,6 +6,8 @@ const testCases = [
     // ================= THROW CASES =================
     { name: "THROW: 2.5 → not integer", input: 2.5, expected: null, expectThrow: true },
     { name: "THROW: '5' string input", input: "5", expected: null, expectThrow: true },
+    { name: "THROW: true input", input: true, expected: null, expectThrow: true },
+    { name: "THROW: array input", input: [1, 2, 3], expected: null, expectThrow: true },
 
     // ================= EDGE CASES =================
     { name: "EDGE: 1 → not prime", input: 1, expected: "không" },

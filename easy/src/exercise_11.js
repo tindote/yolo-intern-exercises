@@ -7,7 +7,9 @@
  * @returns {number|null} The minimum number in the array, or null if the array is empty.
  */
 const findByRule = require("../../utils/findByRule");
+const validateNumberArray = require("../../utils/validateNumberArray");
 function findMinNumberInArray(arr) {
+    validateNumberArray(arr);  
     return findByRule(arr, (current, min) => current < min);
 }
 

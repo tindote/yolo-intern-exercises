@@ -4,7 +4,9 @@
  * @returns {number} The sum of all even numbers in the array.
  */
 const sumByRule = require("../../utils/sumElementOfArrayByRule");
+const validateIntegerArray = require("../../utils/validateIntegerArray");
 function sumEvenNumbersInArray(array) {
+    validateIntegerArray(array);
     return sumByRule(array, (num) => num % 2 === 0);
 }
 

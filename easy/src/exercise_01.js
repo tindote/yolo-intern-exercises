@@ -10,7 +10,13 @@
  * @returns {number[]} rotated array [number2, number3, number1]
  */
 
+const isNumber = require("../../utils/isNumber");
 function rotate3Numbers(number1, number2, number3) {
+    //validate all number type
+    if(!isNumber(number1) || !isNumber(number2) || !isNumber(number3)){
+        throw new TypeError("All input must be number");
+    }
+    
     //store first value temporarily
     const temp = number1;
 

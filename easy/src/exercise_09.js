@@ -13,8 +13,14 @@
 
 const floorNumber = require("../../utils/floorNumber");
 const absNumber = require("../../utils/absNumber");
+const isNumber = require("../../utils/isNumber");
 
 function getRemainder(dividend, divisor) {
+    //handle input is not number
+    if(!isNumber(dividend) || !isNumber(divisor)){
+        throw new TypeError("Input must be number");
+    }
+
     //handle division by zero
     if (divisor === 0) {
         throw new Error('Cannot divide by zero, provided calculation: dividend = ' + dividend + ', divisor = ' + divisor);
@@ -38,7 +44,7 @@ function getRemainder(dividend, divisor) {
         remainder = -remainder;
     }
 
-    return remainder;
+    return remainder = Number(remainder.toFixed(10));;
 }
 
 module.exports = getRemainder;

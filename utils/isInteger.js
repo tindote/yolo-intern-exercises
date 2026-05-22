@@ -3,6 +3,11 @@
  * 
  * @param {number} number 
  */
+const isNumber = require("./isNumber");
 function isInteger(number) {
-    return number%1 === 0;
+    if(!isNumber(number)){
+        return false;
+    }
+    return number % 1 === 0;
 }
+module.exports = isInteger;

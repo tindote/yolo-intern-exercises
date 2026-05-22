@@ -7,7 +7,9 @@
  * @returns {number|null} The maximum number in the array, or null if the array is empty.
  */
 const findByRule = require("../../utils/findByRule");
-function findMaxNumberInArray(arr) {   
+const validateNumberArray = require("../../utils/validateNumberArray");
+function findMaxNumberInArray(arr) { 
+    validateNumberArray(arr);  
     return findByRule(arr, (current, max) => current > max);
 }
 module.exports = findMaxNumberInArray;

@@ -12,8 +12,14 @@
 
 const absNumber = require("../../utils/absNumber");
 const floorNumber = require("../../utils/floorNumber");
+const isInteger = require("../../utils/isInteger");
 
 function calculatePower(base, exponent) {
+    // handle type error
+    if(!isInteger(base) || !isInteger(exponent)){
+        throw new TypeError("All input must be integer!");
+    }
+
     // handle special cases
     if (base === 0 && exponent <= 0) {
         throw new Error('Invalid mathematical operation for base 0 and non-positive exponent provided: base = ' + base + ', exponent = ' + exponent);
@@ -71,53 +77,3 @@ function calculatePositiveIntegerPower(base, exponent) {
     }
     return result;
 }
-
-/**
- * Calculates the natural logarithm of a positive number
- * 
- * @param {number} number - the input number (must be positive)
- * @returns {number} the natural logarithm of the input number
- */
-function myLog(number) {
-    if (number <= 0) throw new Error('number must be > 0');
-
-    let exponentShift = 0;
-
-    while (number > 2) {
-        number /= 2;
-        exponentShift++;
-    }
-
-    while (number < 0.5) {
-        number *= 2;
-        exponentShift--;
-    }
-
-    let taylorSum = 0;
-    let term = number - 1;
-
-    for (let i = 1; i <= 100; i++) {
-        const sign = (i % 2 === 1) ? 1 : -1;
-        taylorSum += sign * term / i;
-        term *= (number - 1);
-    }
-
-    return taylorSum + exponentShift * Math.LN2;
-}
-
-/**
- * Calculates the exponential of a number (e^x)
- * @param {number} exponent - the exponent
- * @returns {number} the exponential of the exponent
- */
-function myExp(exponent) {
-    let sum = 1;
-    let term = 1;
-
-    for (let n = 1; n <= 100; n++) {
-        term *= exponent / n;
-        sum += term;
-    }
-    return sum;
-}
-

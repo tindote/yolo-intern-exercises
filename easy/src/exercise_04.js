@@ -4,8 +4,9 @@
  * @returns {number} The count of even numbers.
  */
 const countByRule = require("../../utils/countByRule.js");
-
+const validateIntegerArray = require("../../utils/validateIntegerArray.js")
 function countEvenNumbers(numbers) {
+    validateIntegerArray(numbers);
     return countByRule(numbers, (num) => num % 2 === 0);
 }
 

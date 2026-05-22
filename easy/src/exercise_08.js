@@ -11,10 +11,10 @@
  * @param {number} number - The number to check.
  * @returns {boolean} True if the number is prime, false otherwise.
  */
-
+const isInteger = require("../../utils/isInteger");
 function checkPrime(number) {
     // Step 1: validate input is an integer
-    if (!Number.isInteger(number)) {
+    if (!isInteger(number)) {
         throw new Error('Input must be an integer, provided: ' + number);
     }
     // Step 2: check if the number is less than or equal to 1 (not prime)

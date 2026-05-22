@@ -27,7 +27,14 @@ const testCases = [
 
     // ================= THROW CASES =================
     { name: "[THROW] 0^0 should throw error", fn: () => testFunction(0, 0), expected: null, expectThrow: true },
-    { name: "[THROW] 0^-1 should throw error", fn: () => testFunction(0, -1), expected: null, expectThrow: true }
+    { name: "[THROW] 0^-1 should throw error", fn: () => testFunction(0, -1), expected: null, expectThrow: true },
+
+    // ================= TYPE CHECK ==================
+    { name: "INVALID input must be integers", fn: () => testFunction(3, "hello"), expected: null, expectThrow: true },
+    { name: "INVALID input must be integers", fn: () => testFunction(1.5, 3), expected: null, expectThrow: true },
+    { name: "INVALID input must be integers", fn: () => testFunction([1,2,3], 1,3), expected: null, expectThrow: true },
+    { name: "INVALID input must be integers", fn: () => testFunction(3, true), expected: null, expectThrow: true },
+        
 ];
 
 console.log(`\n===== TESTING: ${testFunction.name} =====`);

@@ -9,8 +9,12 @@
  * @param {number} secondNumber - second integer
  * @returns {string} parity relationship result
  */
-
+const isInteger = require("../../utils/isInteger");
 function checkParity(firstNumber, secondNumber) {
+    if(!isInteger(firstNumber) || !isInteger(secondNumber)){
+        throw new TypeError("All input must be Integer!");
+    }
+
     //determine parity
     const isFirstEven = firstNumber % 2 === 0;
     const isSecondEven = secondNumber % 2 === 0;

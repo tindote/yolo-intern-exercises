@@ -21,11 +21,18 @@ const testCases = [
     { name: "LARGE: 1e6 999999 123456 → rotated", input: [1000000, 999999, 123456], expected: [999999, 123456, 1000000] },
 
     // ================= DECIMAL NUMBERS =================
-    { name: "DECIMAL: 1.5 2.5 3.5 → 2.5 3.5 1.5", input: [1.5, 2.5, 3.5], expected: [2.5, 3.5, 1.5] }
+    { name: "DECIMAL: 1.5 2.5 3.5 → 2.5 3.5 1.5", input: [1.5, 2.5, 3.5], expected: [2.5, 3.5, 1.5] },
+
+    // ================= TYPE CHECK ======================
+    { name: "INVALID: input is not number", input: ["2", 3, 4], expected: null, expectThrow: true },
+    { name: "INVALID: input is not number", input: [[1, 2], 3, 4], expected: null, expectThrow: true },
+    { name: "INVALID: input is not number", input: true, expected: null, expectThrow: true }
 ];
 
 console.log(`\n===== TESTING: ${testFunction.name} =====`);
 
 for (const tc of testCases) {
-    test(tc.name, () => testFunction(...tc.input), tc.expected);
+    test(tc.name, () => testFunction(...tc.input), tc.expected, {
+        expectThrow: tc.expectThrow || false
+    });
 }

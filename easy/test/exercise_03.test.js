@@ -26,11 +26,20 @@ const testCases = [
 
     // ================= SIGN VARIATIONS =================
     { name: "SIGN: -2 -4 → Both numbers are even", input: [-2, -4], expected: "Both numbers are even" },
-    { name: "SIGN: -2 4 → Both numbers are even", input: [-2, 4], expected: "Both numbers are even" }
+    { name: "SIGN: -2 4 → Both numbers are even", input: [-2, 4], expected: "Both numbers are even" },
+
+    // ================= TYPE CHECK ======================
+    { name: "INVALID: input is not number", input: ["2", 3], expected: null, expectThrow: true },
+    { name: "INVALID: input is not number", input: [[1, 2], 3], expected: null, expectThrow: true },
+    { name: "INVALID: input is not number", input: true, expected: null, expectThrow: true }
+
+
 ];
 
 console.log(`\n===== TESTING: ${testFunction.name} =====`);
 
 for (const tc of testCases) {
-    test(tc.name, () => testFunction(...tc.input), tc.expected);
+    test(tc.name, () => testFunction(...tc.input), tc.expected, {
+        expectThrow: tc.expectThrow || false
+    });
 }

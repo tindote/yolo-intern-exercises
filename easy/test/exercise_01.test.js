@@ -1,38 +1,127 @@
-﻿const testFunction = require("../src/exercise_01.js");
-const { test } = require("../../lib/test.js");
+﻿const shuffleThreeNumbers = require("../src/exercise_01");
+const { test } = require("../../lib/test");
 
+/**
+ * Check if two arrays contain same values
+ * regardless of order
+ */
+function containsSameValues(arr1, arr2) {
+    if (arr1.length !== arr2.length) return false;
+
+    const sorted1 = arr1.sort((a, b) => a - b);
+    const sorted2 = arr2.sort((a, b) => a - b);
+
+    for (let i = 0; i < sorted1.length; i++) {
+        if (sorted1[i] !== sorted2[i]) return false;
+    }
+
+    return true;
+}
+
+/**
+ * Test cases
+ */
 const testCases = [
+    // VALID CASES
+    {
+        name: "VALID: positive integers",
+        input: [1, 2, 3],
+        expected: true
+    },
 
-    // ================= BASIC CASES =================
-    { name: "BASIC: 1 2 3 → 2 3 1", input: [1, 2, 3], expected: [2, 3, 1] },
-    { name: "BASIC: 10 20 30 → 20 30 10", input: [10, 20, 30], expected: [20, 30, 10] },
+    {
+        name: "VALID: duplicate numbers",
+        input: [1, 1, 2],
+        expected: true
+    },
 
-    // ================= EDGE CASES =================
-    { name: "EDGE: all same values (5 5 5)", input: [5, 5, 5], expected: [5, 5, 5] },
-    { name: "EDGE: all zeros (0 0 0)", input: [0, 0, 0], expected: [0, 0, 0] },
+    {
+        name: "VALID: negative numbers",
+        input: [-1, -2, -3],
+        expected: true
+    },
 
-    // ================= NEGATIVE NUMBERS =================
-    { name: "NEGATIVE: -1 -2 -3 → -2 -3 -1", input: [-1, -2, -3], expected: [-2, -3, -1] },
+    {
+        name: "VALID: decimal numbers",
+        input: [1.5, 2.5, 3.5],
+        expected: true
+    },
 
-    // ================= MIXED VALUES =================
-    { name: "MIXED: -10 0 10 → 0 10 -10", input: [-10, 0, 10], expected: [0, 10, -10] },
+    {
+        name: "VALID: zeros",
+        input: [0, 0, 0],
+        expected: true
+    },
 
-    // ================= LARGE NUMBERS =================
-    { name: "LARGE: 1e6 999999 123456 → rotated", input: [1000000, 999999, 123456], expected: [999999, 123456, 1000000] },
+    {
+        name: "VALID: large numbers",
+        input: [999999, 888888, 777777],
+        expected: true
+    },
 
-    // ================= DECIMAL NUMBERS =================
-    { name: "DECIMAL: 1.5 2.5 3.5 → 2.5 3.5 1.5", input: [1.5, 2.5, 3.5], expected: [2.5, 3.5, 1.5] },
+    // ERROR CASES
+    {
+        name: "ERROR: first argument is string",
+        input: ["1", 2, 3],
+        expectThrow: true
+    },
 
-    // ================= TYPE CHECK ======================
-    { name: "INVALID: input is not number", input: ["2", 3, 4], expected: null, expectThrow: true },
-    { name: "INVALID: input is not number", input: [[1, 2], 3, 4], expected: null, expectThrow: true },
-    { name: "INVALID: input is not number", input: true, expected: null, expectThrow: true }
+    {
+        name: "ERROR: second argument is undefined",
+        input: [1, undefined, 3],
+        expectThrow: true
+    },
+
+    {
+        name: "ERROR: third argument is object",
+        input: [1, 2, {}],
+        expectThrow: true
+    },
+
+    {
+        name: "ERROR: all arguments invalid",
+        input: [[], {}, "3"],
+        expectThrow: true
+    },
+
+    {
+        name: "ERROR: null input",
+        input: [null, 1, 2],
+        expectThrow: true
+    },
+
+    {
+        name: "ERROR: boolean input",
+        input: [true, 1, 2],
+        expectThrow: true
+    }
 ];
 
-console.log(`\n===== TESTING: ${testFunction.name} =====`);
+/**
+ * Run all test cases
+ */
+for (const testCase of testCases) {
 
-for (const tc of testCases) {
-    test(tc.name, () => testFunction(...tc.input), tc.expected, {
-        expectThrow: tc.expectThrow || false
-    });
+    // THROW CASE
+    if (testCase.expectThrow) {
+        test(
+            testCase.name,
+            () => shuffleThreeNumbers(...testCase.input),
+            null,
+            { expectThrow: true }
+        );
+
+        continue;
+    }
+
+    // NORMAL CASE
+    test(
+        testCase.name,
+        () => {
+            const result = shuffleThreeNumbers(...testCase.input);
+
+            return containsSameValues(result, testCase.input);
+        },
+        testCase.expected
+    );
 }

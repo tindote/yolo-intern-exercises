@@ -41,4 +41,4 @@ function shuffleThreeNumbers(number1, number2, number3) {
     return numbers;
 }
 
-module.exports = shuffle3Numbers;
+module.exports = shuffleThreeNumbers;

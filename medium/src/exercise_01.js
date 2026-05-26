@@ -16,7 +16,7 @@ function sortByString(array, rule) {
 
     //handle input string
     let rule2 = '' + rule;
-    if(!rule2.toLowerCase === 'tăng' && !rule2.toLowerCase === 'giảm'){
+    if(rule2.toLowerCase() !== 'tăng' && rule2.toLowerCase() !== 'giảm'){
         throw new TypeError('input rule must be "tăng" or "giảm"');
     }
 

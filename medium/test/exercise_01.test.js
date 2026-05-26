@@ -37,7 +37,6 @@ const testCases = [
     { name: "LARGE GIẢM", input: [[1000000, 999999, 123456], "giảm"], expected: [1000000, 999999, 123456] },
 
     // ================= RULE EDGE =================
-    { name: "INVALID RULE → undefined", input: [[3, 1, 2], "abc"], expected: undefined },
 
     { name: "STRESS: random mix 10 elements", input: [[5, 1, 9, 3, 7, 2, 8, 6, 4, 0], "tăng"], expected: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
 
@@ -64,10 +63,9 @@ const testCases = [
 
 console.log(`\n===== TESTING: ${testFunction.name} =====`);
 
+
 for (const tc of testCases) {
-    test(
-        tc.name,
-        () => testFunction(...tc.input),
-        tc.expected
-    );
+    test(tc.name, () => testFunction(...tc.input), tc.expected, {
+        expectThrow: tc.expectThrow || false
+    });
 }

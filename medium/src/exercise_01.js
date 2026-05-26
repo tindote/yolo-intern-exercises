@@ -9,7 +9,17 @@
  */
 const floorNumber = require("../../utils/floorNumber");
 const sortByRule = require("../../utils/sortArrayByRule");
+const validateNumberArray = require("../../utils/validateNumberArray");
 function sortByString(array, rule) {
+    //handle array type
+    validateNumberArray(array);
+
+    //handle input string
+    let rule2 = '' + rule;
+    if(!rule2.toLowerCase === 'tăng' && !rule2.toLowerCase === 'giảm'){
+        throw new TypeError('input rule must be "tăng" or "giảm"');
+    }
+
     // Handle empty array case
     if (array.length === 0) {
         return array;

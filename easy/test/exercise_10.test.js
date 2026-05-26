@@ -46,9 +46,9 @@ const testCases = [
     { name: "INVALID: input must be array", input: 1, expected: null, expectThrow: true },
     { name: "INVALID: input must be array", input: true, expected: null, expectThrow: true },
 
-    { name: "INVALID: all element must be integer", input: [0, "1.5", 2, 3], expected: null, expectThrow: true },
-    { name: "INVALID: all element must be integer", input: [0, true, 2, 3], expected: null, expectThrow: true },
-    { name: "INVALID: all element must be integer", input: [0, null, 2, 3], expected: null, expectThrow: true }
+    { name: "INVALID: all element must be number", input: [0, "1.5", 2, 3], expected: null, expectThrow: true },
+    { name: "INVALID: all element must be number", input: [0, true, 2, 3], expected: null, expectThrow: true },
+    { name: "INVALID: all element must be number", input: [0, null, 2, 3], expected: null, expectThrow: true }
 
 ];
 

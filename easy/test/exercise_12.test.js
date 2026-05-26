@@ -33,11 +33,24 @@ const testCases = [
     { name: "LARGE: [1000000,2000000,3000000] → 2000000", input: [1000000, 2000000, 3000000], expected: 2000000 },
 
     // ================= FLOATING POINT CHECK =================
-    { name: "FLOAT: [1,2,2] → 1.6666666667", input: [1, 2, 2], expected: 1.6666666666666667 }
+    { name: "FLOAT: [1,2,2] → 1.6666666667", input: [1, 2, 2], expected: 1.6666666666666667 },
+
+    // ================= TYPE CHECK ==================
+    { name: "INVALID: input must be array", input: {}, expected: null, expectThrow: true },
+    { name: "INVALID: input must be array", input: 'hello', expected: null, expectThrow: true },
+    { name: "INVALID: input must be array", input: 1, expected: null, expectThrow: true },
+    { name: "INVALID: input must be array", input: true, expected: null, expectThrow: true },
+
+    { name: "INVALID: all element must be number", input: [0, "1.5", 2, 3], expected: null, expectThrow: true },
+    { name: "INVALID: all element must be number", input: [0, true, 2, 3], expected: null, expectThrow: true },
+    { name: "INVALID: all element must be number", input: [0, null, 2, 3], expected: null, expectThrow: true }
+
 ];
 
 console.log(`\n===== TESTING: ${testFunction.name} =====`);
 
 for (const tc of testCases) {
-    test(tc.name, () => testFunction(tc.input), tc.expected);
+    test(tc.name, () => testFunction(tc.input), tc.expected, {
+        expectThrow: tc.expectThrow || false
+    });
 }

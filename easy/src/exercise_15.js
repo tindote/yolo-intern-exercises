@@ -6,7 +6,13 @@
  * @param {number} number - The number to calculate the factorial for.
  * @returns {number} The factorial of the given number.
  */
+const isNumber = require("../../utils/isNumber");
+
 function calculateFactorial(number) {
+    //handle number type
+    if(!isNumber(number)){
+        throw new TypeError("Input must be a number");
+    }
     // Handle edge cases for 0 and 1
     if (number == 0 || number == 1) {
         return 1;

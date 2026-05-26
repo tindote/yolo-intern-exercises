@@ -28,20 +28,30 @@ const testCases = [
     // ================= MIXED VALUES =================
     { name: "MIXED: [-1,0,1] find 0 → 1", input: [[-1, 0, 1], 0], expected: 1 },
 
-    // ================= LOOSE EQUALITY CHECK (IMPORTANT) =================
-    { name: "LOOSE: [1,'2',3] find '2' → 1", input: [[1, '2', 3], '2'], expected: 1 },
-    { name: "LOOSE: [1,'2',3] find 2 → 1 (== match)", input: [[1, '2', 3], 2], expected: 1 },
-
     // ================= LARGE ARRAY =================
-    { name: "LARGE: find last element", input: [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 10], expected: 9 }
+    { name: "LARGE: find last element", input: [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 10], expected: 9 },
+
+    // ================= TYPE CHECK ==================
+    { name: "INVALID: input must be array", input: {}, expected: null, expectThrow: true },
+    { name: "INVALID: input must be array", input: 'hello', expected: null, expectThrow: true },
+    { name: "INVALID: input must be array", input: 1, expected: null, expectThrow: true },
+    { name: "INVALID: input must be array", input: true, expected: null, expectThrow: true },
+
+    { name: "INVALID: all element must be number", input: [[0, "1.5", 2, 3], 2], expected: null, expectThrow: true },
+    { name: "INVALID: all element must be number", input: [[0, true, 2, 3], 2], expected: null, expectThrow: true },
+    { name: "INVALID: all element must be number", input: [[0, null, 2, 3], 2], expected: null, expectThrow: true },
+
+    { name: "INVALID: value must be number", input: [[0, 1, 2, 3], "2"], expected: null, expectThrow: true },
+    { name: "INVALID: value must be number", input: [[0, 1, 2, 3], true], expected: null, expectThrow: true },
+    { name: "INVALID: value must be number", input: [[0, 1, 2, 3], [2]], expected: null, expectThrow: true },
+    { name: "INVALID: value must be number", input: [[0, 1, 2, 3], {}], expected: null, expectThrow: true },
+
 ];
 
 console.log(`\n===== TESTING: ${testFunction.name} =====`);
 
 for (const tc of testCases) {
-    test(
-        tc.name,
-        () => testFunction(...tc.input),
-        tc.expected
-    );
+    test(tc.name, () => testFunction(...tc.input), tc.expected, {
+        expectThrow: tc.expectThrow || false
+    });
 }

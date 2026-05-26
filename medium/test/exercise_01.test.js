@@ -43,7 +43,23 @@ const testCases = [
 
     { name: "STRESS: duplicates heavy", input: [[3, 3, 3, 2, 2, 1, 1, 1, 4, 4], "tăng"], expected: [1, 1, 1, 2, 2, 3, 3, 3, 4, 4] },
 
-    { name: "STRESS: mixed sign long", input: [[10, -5, 3, 0, -1, 8, -2, 6, 4, -3], "tăng"], expected: [-5, -3, -2, -1, 0, 3, 4, 6, 8, 10] }
+    { name: "STRESS: mixed sign long", input: [[10, -5, 3, 0, -1, 8, -2, 6, 4, -3], "tăng"], expected: [-5, -3, -2, -1, 0, 3, 4, 6, 8, 10] },
+
+    // ================= TYPE CHECK ==================
+    { name: "INVALID: input must be array", input: {}, expected: null, expectThrow: true },
+    { name: "INVALID: input must be array", input: 'hello', expected: null, expectThrow: true },
+    { name: "INVALID: input must be array", input: 1, expected: null, expectThrow: true },
+    { name: "INVALID: input must be array", input: true, expected: null, expectThrow: true },
+
+    { name: "INVALID: all element must be number", input: [[0, "1.5", 2, 3], "tăng"], expected: null, expectThrow: true },
+    { name: "INVALID: all element must be number", input: [[0, true, 2, 3], "tăng"], expected: null, expectThrow: true },
+    { name: "INVALID: all element must be number", input: [[0, null, 2, 3], "tăng"], expected: null, expectThrow: true },
+
+    { name: 'INVALID: rule must be "tăng" or "giảm"', input: [[0, 1, 2, 3], "căng"], expected: null, expectThrow: true },
+    
+
+
+
 ];
 
 console.log(`\n===== TESTING: ${testFunction.name} =====`);

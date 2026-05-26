@@ -1,31 +1,44 @@
 /**
- * Rotate 3 numbers to the right.
- * 1. Store first value temporarily
- * 2. Shift values to the left
- * 3. Return rotated result
- *
- * @param {number} number1 - first number
- * @param {number} number2 - second number
- * @param {number} number3 - third number
- * @returns {number[]} rotated array [number2, number3, number1]
+ * Shuffer three input numbers
+ * 1. Validate input type (is number)
+ * 2. Create array to store all number
+ * 3. Using fisher-yates algorithm to shuffer
+ * 4. Return result
+ * 
+ * 
+ * @param {number} number1
+ * @param {number} number2
+ * @param {number} number3
+ * @returns {array} array contain three numbers after shuffering 
  */
 
 const isNumber = require("../../utils/isNumber");
-function rotate3Numbers(number1, number2, number3) {
-    //validate all number type
-    if(!isNumber(number1) || !isNumber(number2) || !isNumber(number3)){
+
+function shuffleThreeNumbers(number1, number2, number3) {
+    // validate all number type
+    if (
+        !isNumber(number1) ||
+        !isNumber(number2) ||
+        !isNumber(number3)
+    ) {
         throw new TypeError("All input must be number");
     }
-    
-    //store first value temporarily
-    const temp = number1;
 
-    //shift values to the left
-    const rotated1 = number2;
-    const rotated2 = number3;
-    const rotated3 = temp;
+    // store values in array
+    const numbers = [number1, number2, number3];
 
-    //return result
-    return [rotated1, rotated2, rotated3];
+    // Fisher-Yates shuffle
+    for (let i = numbers.length - 1; i > 0; i--) {
+        const randomIndex = Math.floor(Math.random() * (i + 1));
+
+        // swap values
+        [numbers[i], numbers[randomIndex]] = [
+            numbers[randomIndex],
+            numbers[i]
+        ];
+    }
+
+    return numbers;
 }
-module.exports = rotate3Numbers;
+
+module.exports = shuffle3Numbers;

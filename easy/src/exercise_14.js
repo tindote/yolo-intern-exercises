@@ -7,7 +7,17 @@
  * @param {number} value - The value to find.
  * @returns {number} The index of the value, or -1 if not found.
  */
+const validateNumberArray = require("../../utils/validateNumberArray");
+const isNumber = require("../../utils/isNumber");
 function findIndex(arr, value) {
+    //validate array type and element type
+    validateNumberArray(arr);
+
+    //validate value type
+    if(!isNumber(value)){
+        throw new TypeError("value must be a number");
+    }
+
     // Iterate through the array to find the value
     for (var i = 0; i < arr.length; i++) {
         if (arr[i] == value) {

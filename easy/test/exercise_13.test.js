@@ -32,13 +32,25 @@ const testCases = [
     { name: "ZERO: [0,1,2,3] → [3,2,1,0]", input: [0, 1, 2, 3], expected: [3, 2, 1, 0] },
 
     // ================= CHECK IMMUTABILITY =================
-    { name: "IMMUTABILITY: original array not changed", input: [1, 2, 3], expected: [3, 2, 1] }
+    { name: "IMMUTABILITY: original array not changed", input: [1, 2, 3], expected: [3, 2, 1] },
+
+    // ================= TYPE CHECK ==================
+    { name: "INVALID: input must be array", input: {}, expected: null, expectThrow: true },
+    { name: "INVALID: input must be array", input: 'hello', expected: null, expectThrow: true },
+    { name: "INVALID: input must be array", input: 1, expected: null, expectThrow: true },
+    { name: "INVALID: input must be array", input: true, expected: null, expectThrow: true },
+
+    { name: "INVALID: all element must be number", input: [0, "1.5", 2, 3], expected: null, expectThrow: true },
+    { name: "INVALID: all element must be number", input: [0, true, 2, 3], expected: null, expectThrow: true },
+    { name: "INVALID: all element must be number", input: [0, null, 2, 3], expected: null, expectThrow: true }
+
 ];
 
 console.log(`\n===== TESTING: ${testFunction.name} =====`);
 
-for (const tc of testCases) {
-    const inputCopy = [...tc.input];
 
-    test(tc.name,() => testFunction(tc.input),tc.expected);
+for (const tc of testCases) {
+    test(tc.name, () => testFunction(tc.input), tc.expected, {
+        expectThrow: tc.expectThrow || false
+    });
 }

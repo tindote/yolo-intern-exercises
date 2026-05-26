@@ -6,8 +6,10 @@
  * @param {number[]} array - The array of numbers to reverse.
  * @returns {number[]} The reversed array.
  */
-
+const validateNumberArray = require("../../utils/validateNumberArray");
 function reverseNumbericArray(array) {
+    //validate array type and element type
+    validateNumberArray(array);
     //handle empty array case
     if (array.length === 0) {
         return [];

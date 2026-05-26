@@ -35,7 +35,14 @@ const testCases = [
     { name: "LARGE: 10! → 3628800", input: 10, expected: 3628800 },
 
     // ================= STABILITY =================
-    { name: "STABILITY: repeated 5! → 120", input: 5, expected: 120 }
+    { name: "STABILITY: repeated 5! → 120", input: 5, expected: 120 },
+
+        // ================= TYPE CHECK ==================
+    { name: "INVALID: input must be number", input: "1", expected: null, expectThrow: true },
+    { name: "INVALID: input must be number", input: [1], expected: null, expectThrow: true },
+    { name: "INVALID: input must be number", input: {}, expected: null, expectThrow: true },
+    { name: "INVALID: input must be number", input: true, expected: null, expectThrow: true },
+
 ];
 
 console.log(`\n===== TESTING: ${testFunction.name} =====`);

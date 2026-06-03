@@ -6,8 +6,8 @@
  * @param {number[]} arr - The array of numbers.
  * @returns {number|null} The maximum number in the array, or null if the array is empty.
  */
-const findByRule = require("../../utils/findByRule");
-const validateNumberArray = require("../../utils/validateNumberArray");
+const findByRule = require("../../utils/src/findByRule");
+const validateNumberArray = require("../../utils/src/validateNumberArray");
 function findMaxNumberInArray(arr) { 
     validateNumberArray(arr);  
     return findByRule(arr, (current, max) => current > max);

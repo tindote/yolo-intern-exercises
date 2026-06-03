@@ -1,56 +1,49 @@
 ﻿const testFunction = require("../src/exercise_13.js");
-const { test } = require("../../lib/test.js");
+const runTestcases = require('../../lib/runTestcases.js');
 
 const testCases = [
 
     // ================= EDGE CASE =================
-    { name: "EDGE: [] → []", input: [], expected: [] },
+    { name: "EDGE: [] → []", function: testFunction, input: [[]], expected: [] },
 
     // ================= SINGLE ELEMENT =================
-    { name: "SINGLE: [1] → [1]", input: [1], expected: [1] },
+    { name: "SINGLE: [1] → [1]", function: testFunction, input: [[1]], expected: [1] },
 
     // ================= BASIC =================
-    { name: "BASIC: [1,2,3] → [3,2,1]", input: [1, 2, 3], expected: [3, 2, 1] },
-    { name: "BASIC: [10,20,30,40] → [40,30,20,10]", input: [10, 20, 30, 40], expected: [40, 30, 20, 10] },
+    { name: "BASIC: [1,2,3] → [3,2,1]", function: testFunction, input: [[1, 2, 3]], expected: [3, 2, 1] },
+    { name: "BASIC: [10,20,30,40] → [40,30,20,10]", function: testFunction, input: [[10, 20, 30, 40]], expected: [40, 30, 20, 10] },
 
     // ================= ODD LENGTH =================
-    { name: "ODD: [1,2,3,4,5] → [5,4,3,2,1]", input: [1, 2, 3, 4, 5], expected: [5, 4, 3, 2, 1] },
+    { name: "ODD: [1,2,3,4,5] → [5,4,3,2,1]", function: testFunction, input: [[1, 2, 3, 4, 5]], expected: [5, 4, 3, 2, 1] },
 
     // ================= NEGATIVE NUMBERS =================
-    { name: "NEGATIVE: [-1,-2,-3] → [-3,-2,-1]", input: [-1, -2, -3], expected: [-3, -2, -1] },
+    { name: "NEGATIVE: [-1,-2,-3] → [-3,-2,-1]", function: testFunction, input: [[-1, -2, -3]], expected: [-3, -2, -1] },
 
     // ================= MIXED SIGN =================
-    { name: "MIXED: [-1,0,1] → [1,0,-1]", input: [-1, 0, 1], expected: [1, 0, -1] },
+    { name: "MIXED: [-1,0,1] → [1,0,-1]", function: testFunction, input: [[-1, 0, 1]], expected: [1, 0, -1] },
 
     // ================= DUPLICATES =================
-    { name: "DUPLICATE: [5,5,5] → [5,5,5]", input: [5, 5, 5], expected: [5, 5, 5] },
+    { name: "DUPLICATE: [5,5,5] → [5,5,5]", function: testFunction, input: [[5, 5, 5]], expected: [5, 5, 5] },
 
     // ================= LARGE NUMBERS =================
-    { name: "LARGE: [1000000,999999,123456] → [123456,999999,1000000]", input: [1000000, 999999, 123456], expected: [123456, 999999, 1000000] },
+    { name: "LARGE: [1000000,999999,123456] → [123456,999999,1000000]", function: testFunction, input: [[1000000, 999999, 123456]], expected: [123456, 999999, 1000000] },
 
     // ================= ZERO =================
-    { name: "ZERO: [0,1,2,3] → [3,2,1,0]", input: [0, 1, 2, 3], expected: [3, 2, 1, 0] },
+    { name: "ZERO: [0,1,2,3] → [3,2,1,0]", function: testFunction, input: [[0, 1, 2, 3]], expected: [3, 2, 1, 0] },
 
     // ================= CHECK IMMUTABILITY =================
-    { name: "IMMUTABILITY: original array not changed", input: [1, 2, 3], expected: [3, 2, 1] },
+    { name: "IMMUTABILITY: original array not changed", function: testFunction, input: [[1, 2, 3]], expected: [3, 2, 1] },
 
     // ================= TYPE CHECK ==================
-    { name: "INVALID: input must be array", input: {}, expected: null, expectThrow: true },
-    { name: "INVALID: input must be array", input: 'hello', expected: null, expectThrow: true },
-    { name: "INVALID: input must be array", input: 1, expected: null, expectThrow: true },
-    { name: "INVALID: input must be array", input: true, expected: null, expectThrow: true },
+    { name: "INVALID: input must be array", function: testFunction, input: [{}], expected: 'Input must be array', expectThrow: true },
+    { name: "INVALID: input must be array", function: testFunction, input: ["hello"], expected: 'Input must be array', expectThrow: true },
+    { name: "INVALID: input must be array", function: testFunction, input: [1], expected: 'Input must be array', expectThrow: true },
+    { name: "INVALID: input must be array", function: testFunction, input: [true], expected: 'Input must be array', expectThrow: true },
 
-    { name: "INVALID: all element must be number", input: [0, "1.5", 2, 3], expected: null, expectThrow: true },
-    { name: "INVALID: all element must be number", input: [0, true, 2, 3], expected: null, expectThrow: true },
-    { name: "INVALID: all element must be number", input: [0, null, 2, 3], expected: null, expectThrow: true }
+    { name: "INVALID: all element must be number", function: testFunction, input: [[0, "1.5", 2, 3]], expected: 'All element of array must be number', expectThrow: true },
+    { name: "INVALID: all element must be number", function: testFunction, input: [[0, true, 2, 3]], expected: 'All element of array must be number', expectThrow: true },
+    { name: "INVALID: all element must be number", function: testFunction, input: [[0, null, 2, 3]], expected: 'All element of array must be number', expectThrow: true }
 
 ];
 
-console.log(`\n===== TESTING: ${testFunction.name} =====`);
-
-
-for (const tc of testCases) {
-    test(tc.name, () => testFunction(tc.input), tc.expected, {
-        expectThrow: tc.expectThrow || false
-    });
-}
+runTestcases(testCases, __filename);

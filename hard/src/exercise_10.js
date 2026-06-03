@@ -7,7 +7,7 @@
  * @param {Array} arr need to shuffle
  * @returns {Array} array after shuffle
  */
-const floorNumber = require("../../utils/floorNumber");
+const floorNumber = require("../../utils/src/floorNumber");
 function shuffleArray(arr) {
     // Clone input 
     let result = arr;
@@ -26,6 +26,7 @@ function shuffleArray(arr) {
 
     return result;
 }
+
 
 
 module.exports = shuffleArray;

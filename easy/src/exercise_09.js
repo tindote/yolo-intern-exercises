@@ -11,9 +11,9 @@
  * @returns {number} The remainder of the division.
  */
 
-const floorNumber = require("../../utils/floorNumber");
-const absNumber = require("../../utils/absNumber");
-const isNumber = require("../../utils/isNumber");
+const floorNumber = require("../../utils/src/floorNumber");
+const absNumber = require("../../utils/src/absNumber");
+const isNumber = require("../../utils/src/isNumber");
 
 function getRemainder(dividend, divisor) {
     //handle input is not number

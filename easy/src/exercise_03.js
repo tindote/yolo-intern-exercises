@@ -9,7 +9,7 @@
  * @param {number} secondNumber - second integer
  * @returns {string} parity relationship result
  */
-const isInteger = require("../../utils/isInteger");
+const isInteger = require("../../utils/src/isInteger");
 function checkParity(firstNumber, secondNumber) {
     if(!isInteger(firstNumber) || !isInteger(secondNumber)){
         throw new TypeError("All input must be Integer!");
@@ -31,5 +31,6 @@ function checkParity(firstNumber, secondNumber) {
     //mixed parity
     return 'One even and one odd';
 }
+
 module.exports = checkParity;
 

@@ -12,7 +12,7 @@
  * @returns {array} array contain three numbers after shuffering 
  */
 
-const isNumber = require("../../utils/isNumber");
+const isNumber = require("../../utils/src/isNumber");
 
 function shuffleThreeNumbers(number1, number2, number3) {
     // validate all number type

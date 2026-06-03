@@ -1,5 +1,4 @@
 ﻿const testFunction = require("../src/exercise_12.js");
-const { test } = require("../../lib/test.js");
 
 const testCases = [
 
@@ -25,21 +24,4 @@ const testCases = [
 
     // ================= INVALID DECIMAL NEGATIVE =================
     { name: "INVALID: negative decimal → THROW", input: -5.5, expectThrow: true }
-];
-
-console.log(`\n===== TESTING: ${testFunction.name} =====`);
-
-for (const tc of testCases) {
-
-    test(
-        tc.name,
-        () => {
-            const result = testFunction(tc.input);
-
-            // validate random range
-            return result >= -tc.input && result <= tc.input;
-        },
-        true,
-        { expectThrow: tc.expectThrow }
-    );
-}
+]

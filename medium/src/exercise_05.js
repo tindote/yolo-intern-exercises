@@ -1,4 +1,4 @@
-const mergeArrayByOperation = require("../../utils/mergeArrayByOperation");
+const mergeArrayByOperation = require("../../utils/src/mergeArrayByOperation");
 /**
  * Calculates the element-wise product of two arrays of the same length.
  * 1. Use the mergeArrayByOperation utility function to merge the two arrays by multiplying corresponding elements.

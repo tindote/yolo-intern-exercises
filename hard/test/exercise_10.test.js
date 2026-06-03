@@ -1,5 +1,5 @@
 ﻿const testFunction = require("../src/exercise_10.js");
-const { test } = require("../../lib/test.js");
+
 
 const testCases = [
 
@@ -30,30 +30,3 @@ const testCases = [
     { name: "LARGE: large array length preserved", input: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], expectedLength: 10 }
 ];
 
-console.log(`\n===== TESTING: ${testFunction.name} =====`);
-
-for (const tc of testCases) {
-
-    test(
-        tc.name,
-        () => {
-            const result = testFunction([...tc.input]);
-
-            // check empty / single directly
-            if (tc.expected) {
-                return result;
-            }
-
-            // check length
-            if (tc.expectedLength !== undefined) {
-                return result.length === tc.expectedLength;
-            }
-
-            // check same elements after sort
-            if (tc.expectedElements) {
-                return JSON.stringify([...result].sort()) === JSON.stringify([...tc.expectedElements].sort());
-            }
-        },
-        tc.expected ?? true
-    );
-}

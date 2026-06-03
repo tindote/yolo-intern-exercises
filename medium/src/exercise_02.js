@@ -7,7 +7,7 @@
  * @param {*} arr2 The second array.
  * @returns The connected array.
  */
-const validateNumberArray = require("../../utils/validateNumberArray");
+const validateNumberArray = require("../../utils/src/validateNumberArray");
 function connectTwoArrays(arr1, arr2) {
     
     // Create a new array with a length equal to the sum of the lengths of the two input arrays

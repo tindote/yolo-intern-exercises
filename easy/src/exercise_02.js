@@ -10,11 +10,12 @@
  * @returns {number} calculated power result
  */
 
-const absNumber = require("../../utils/absNumber");
-const floorNumber = require("../../utils/floorNumber");
-const isInteger = require("../../utils/isInteger");
+const absNumber = require("../../utils/src/absNumber");
+const floorNumber = require("../../utils/src/floorNumber");
+const isInteger = require("../../utils/src/isInteger");
 
 function calculatePower(base, exponent) {
+    
     // handle type error
     if(!isInteger(base) || !isInteger(exponent)){
         throw new TypeError("All input must be integer!");

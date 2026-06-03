@@ -7,8 +7,8 @@
  * @param {number} integer - The integer whose digits are to be summed.
  * @returns {number} The sum of the digits.
  */
-const absNumber = require('../../utils/absNumber'); 
-const floorNumber = require('../../utils/floorNumber');
+const absNumber = require('../../utils/src/absNumber'); 
+const floorNumber = require('../../utils/src/floorNumber');
 
 function sumDigitsInInteger(integer) {
     // Handle negative integers by taking the absolute value of the input integer

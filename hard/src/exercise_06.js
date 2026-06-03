@@ -4,7 +4,7 @@
  * @param {array} arr2 array sorted by acsending
  * @returns {array} result after connect two arrays
  */
-const conectReversedSortedArraysByRule = require("../../utils/conectReversedSortedArraysByRule")
+const conectReversedSortedArraysByRule = require("../../utils/src/conectReversedSortedArraysByRule")
 function connectSortedArraysAscToDesc(arr1, arr2) {
     return conectReversedSortedArraysByRule(arr1, arr2, (a, b) => a - b < 0);
 }

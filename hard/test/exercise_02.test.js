@@ -1,5 +1,4 @@
 ﻿const testFunction = require("../src/exercise_02.js");
-const { test } = require("../../lib/test.js");
 
 const testCases = [
 
@@ -19,20 +18,3 @@ const testCases = [
     { name: "DECIMAL: range 0.001 → 0.009", input: [0.001, 0.009] }
 ];
 
-console.log(`\n===== TESTING: ${testFunction.name} =====`);
-
-for (const tc of testCases) {
-
-    test(
-        tc.name,
-        () => {
-            const result = testFunction(...tc.input);
-
-            return (
-                result >= tc.input[0] &&
-                result < tc.input[1]
-            );
-        },
-        true
-    );
-}

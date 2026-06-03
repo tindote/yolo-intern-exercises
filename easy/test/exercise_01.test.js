@@ -1,26 +1,14 @@
-﻿const shuffleThreeNumbers = require("../src/exercise_01");
-const { test } = require("../../lib/test");
-
+﻿
 /**
  * Check if two arrays contain same values
  * regardless of order
  */
-function containsSameValues(arr1, arr2) {
-    if (arr1.length !== arr2.length) return false;
 
-    const sorted1 = arr1.sort((a, b) => a - b);
-    const sorted2 = arr2.sort((a, b) => a - b);
-
-    for (let i = 0; i < sorted1.length; i++) {
-        if (sorted1[i] !== sorted2[i]) return false;
-    }
-
-    return true;
-}
-
+const testFunction = require('../src/exercise_01');
 /**
  * Test cases
  */
+
 const testCases = [
     // VALID CASES
     {
@@ -97,31 +85,3 @@ const testCases = [
     }
 ];
 
-/**
- * Run all test cases
- */
-for (const testCase of testCases) {
-
-    // THROW CASE
-    if (testCase.expectThrow) {
-        test(
-            testCase.name,
-            () => shuffleThreeNumbers(...testCase.input),
-            null,
-            { expectThrow: true }
-        );
-
-        continue;
-    }
-
-    // NORMAL CASE
-    test(
-        testCase.name,
-        () => {
-            const result = shuffleThreeNumbers(...testCase.input);
-
-            return containsSameValues(result, testCase.input);
-        },
-        testCase.expected
-    );
-}

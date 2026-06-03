@@ -7,7 +7,7 @@
  * @param {number[]} arr2 - The second array of numbers.
  * @returns {number[]} A new array where each element is the difference of the corresponding elements in the input arrays.
  */
-const mergeArrayByOperation = require('../../utils/mergeArrayByOperation');
+const mergeArrayByOperation = require('../../utils/src/mergeArrayByOperation');
 function calculateSubTwoArray(arr1, arr2) {
     return mergeArrayByOperation(arr1, arr2, (a, b) => a - b);
 }

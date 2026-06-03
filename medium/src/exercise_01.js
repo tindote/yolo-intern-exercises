@@ -7,9 +7,9 @@
  * @param {String} rule - The string that defines the sorting rule. It can be "tăng" for ascending order or "giảm" for descending order.
  * @returns {Array} The sorted array.
  */
-const floorNumber = require("../../utils/floorNumber");
-const sortByRule = require("../../utils/sortArrayByRule");
-const validateNumberArray = require("../../utils/validateNumberArray");
+const floorNumber = require("../../utils/src/floorNumber");
+const sortByRule = require("../../utils/src/sortArrayByRule");
+const validateNumberArray = require("../../utils/src/validateNumberArray");
 function sortByString(array, rule) {
     //handle array type
     validateNumberArray(array);

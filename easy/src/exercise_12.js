@@ -7,7 +7,7 @@
  * @param {number[]} array - The array of numbers.
  * @returns {number|null} The average value of the array, or null if the array is empty.
  */
-const validateNumberArray = require("../../utils/validateNumberArray");
+const validateNumberArray = require("../../utils/src/validateNumberArray");
 function calculateAverageValueOfArray(array) {
     //validate array type and element type
     validateNumberArray(array);

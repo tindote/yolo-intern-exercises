@@ -7,7 +7,7 @@
  * @returns {number[]} A new array where each element is the quotient of the corresponding elements in the input arrays, or null if division by zero occurs.    
  */
 
-const mergeArrayByOperation = require('../../utils/mergeArrayByOperation');
+const mergeArrayByOperation = require('../../utils/src/mergeArrayByOperation');
 function calculateDivideTwoArray(arr1, arr2) {
     return mergeArrayByOperation(arr1, arr2, (a, b) => b !== 0 ? a / b : null);
 }

@@ -4,7 +4,7 @@
  * @param {arrB} second sorted array]
  * @returns {result} result after conneted two array
  */
-const connectSortedArraysByRule = require("../../utils/connectSortedArraysByRule");
+const connectSortedArraysByRule = require("../../utils/src/connectSortedArraysByRule");
 function connectSortedArraysDec(arrA, arrB) {
     return connectSortedArraysByRule(arrA, arrB, (a, b) => a - b > 0);
 }

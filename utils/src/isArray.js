@@ -5,8 +5,9 @@
  */
 function isArray(array){
     if (!Array.isArray(array)) {
-        throw new TypeError("Input must be array");
+        return false;
     }
+    return true;
 }
 
 module.exports = isArray;

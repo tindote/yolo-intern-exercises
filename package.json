@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node lib/src-lib/testRunner.js"
+    "test": "node lib/src-lib/testRunner.js",
+    "test-lib": "jest test-lib"
   },
   "repository": {
     "type": "git",
@@ -17,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/tindote/yolo-intern-exercises/issues"
   },
-  "homepage": "https://github.com/tindote/yolo-intern-exercises#readme"
+  "homepage": "https://github.com/tindote/yolo-intern-exercises#readme",
+  "devDependencies": {
+    "jest": "^30.4.2"
+  }
 }

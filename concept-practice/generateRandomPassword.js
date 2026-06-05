@@ -1,5 +1,6 @@
 /** 
  * Function return random password with at least one upper-case letter, one lower-case letter, one special character, one number
+ * This function show what is non-determinristic fucntion, with the same input we get differences ouput and we cannot know what is the output
  * 1. validate input is integer
  * 2. validate input length >= 4
  * 3. use Math.random() to get four needed characters, push into array
@@ -10,7 +11,7 @@
  * @returns {String} password generated
  */
 
-const isInteger = require("../utils/isInteger");
+const isInteger = require("../utils/src/isInteger");
 const shufferArray = require("../hard/src/exercise_10")
 function generatePassword(length){
     //validate input 

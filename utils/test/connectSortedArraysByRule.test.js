@@ -1,5 +1,5 @@
 const testFunction = require("../src/connectSortedArraysByRule.js");
-const runTestcases = require("../../lib/runTestcases.js");
+const runTestcases = require("../../lib/src-lib/runTestcases.js");
 
 const testCases = [
 

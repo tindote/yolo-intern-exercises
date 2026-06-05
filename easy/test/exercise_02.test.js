@@ -1,5 +1,5 @@
 ﻿const testFunction = require("../src/exercise_02");
-const runTestCases= require('../../lib/runTestcases');
+const runTestCases= require('../../lib/src-lib/runTestcases');
 
 const testCases = [
 

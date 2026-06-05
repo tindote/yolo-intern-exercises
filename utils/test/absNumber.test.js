@@ -1,5 +1,5 @@
 const testFunction = require("../src/absNumber.js");
-const runTestCases = require('../../lib/runTestcases.js');
+const runTestCases = require('../../lib/src-lib/runTestcases.js');
 
 // TODO: Add tests for absNumber
 const testCases = [
